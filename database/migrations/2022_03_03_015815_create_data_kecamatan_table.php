@@ -8,20 +8,26 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('data_kegiatan_wargas', function (Blueprint $table) {
+        Schema::create('data_kecamatan', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_kecamatan');
+            $table->string('nama_kecamatan');
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('data_kegiatan_wargas');
+        Schema::dropIfExists('data_kecamatan');
     }
 };
